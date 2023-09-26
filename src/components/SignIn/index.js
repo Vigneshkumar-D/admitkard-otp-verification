@@ -98,7 +98,7 @@ class SignIn extends Component{
         const phoneNumber = selectedCountry + phoneNumberWithoutCode
         const isValid = this.validatePhoneNumber(phoneNumber)
        if(isValid){
-            const url = 'http://localhost:3031/send-otp'
+            const url = 'http://localhost:3030/send-otp'
             const options = {
                 method: 'POST',
                 body: JSON.stringify({phoneNumber}),
@@ -108,6 +108,7 @@ class SignIn extends Component{
             }
             const response = await fetch(url, options)
             const data = await response.json()
+            console.log(response)
             if (response.ok) {
                 this.onSubmitSuccess(phoneNumber)
             } else {

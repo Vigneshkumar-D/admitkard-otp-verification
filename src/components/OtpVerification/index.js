@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component} from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie'
@@ -86,7 +86,7 @@ handleResendClick = async() => {
 
       // Automatically moving to the next input field if available
       if (event.target.value.length === 1) {
-        if (index <= 5) {
+        if (index < 5) {
           event.target.nextSibling.focus();
         }
       }
