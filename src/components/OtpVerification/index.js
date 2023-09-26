@@ -15,13 +15,7 @@ class OtpVerification extends Component {
     resendTimer: 30,
   };
 
-  // constructor(props) {
-  //   super(props);
-  //   this.inputRefs = Array.from({ length: 6 }, () => createRef());
-  // }
-
 //   componentDidMount() {
-//     // Simulate OTP delivery after 3 seconds
 //     setTimeout(() => {
 //       this.setState({ isOtpArrived: true });
 //     }, 3000);
@@ -32,8 +26,6 @@ class OtpVerification extends Component {
 //   }
 
 //   componentWillUnmount() {
-//     // Clearing the timer when the component is unmounted
-   
 //     clearInterval(this.timerInterval);
 //     clearInterval(this.resendInterval);
 //   }
@@ -81,7 +73,6 @@ handleResendClick = async() => {
     const response = await fetch(url, options)
     this.setState({ isOtpArrived: false, isResendDisabled: true });
 
-    // Simulate OTP resend after 5 seconds
     // setTimeout(() => {
     //   this.setState({ isOtpArrived: true });
     //   this.startResendTimer(); // Start the resend timer
@@ -93,22 +84,13 @@ handleResendClick = async() => {
       const updatedOtp = [...this.state.otp];
       updatedOtp[index] = value;
       this.setState({ otp: updatedOtp });
-      console.log(updatedOtp)
 
-      // // Automatically move to the next input field if available
-      // if (index < updatedOtp.length - 1) {
-      //   this.inputRefs[index + 1].current.focus();
-      // }
-  };
-
-  handleBackspace = (event, index) => {
-    if (event.key === 'Backspace' && index > 0) {
-      const updatedOtp = [...this.state.otp];
-      updatedOtp[index] = ''; // Clear the current input
-      this.setState({ otp: updatedOtp });
-      this[`inputRef${index - 1}`].current.focus();
-      // this.inputRefs[index - 1].current.focus(); // Move focus to the previous input
-    }
+      // Automatically moving to the next input field if available
+      if (event.target.value.length === 1) {
+        if (index <= 5) {
+          event.target.nextSibling.focus();
+        }
+      }
   };
 
   changePhoneNum = () => {
@@ -175,18 +157,16 @@ handleResendClick = async() => {
           <form className='otp-form' onSubmit={this.onSubmitForm}>
             <div className='input-container'>
               {otp.map((digit, index) => (
-                <input
-                  key={uuidv4()}
-                  type="text"
-                  maxLength="1"
-                  value={digit}
-                  className='otp-input'
-                  autoFocus={index === 0}
-                  onChange={(event) => this.handleInputChange(event, index)}
-                  // onKeyDown={(event) => this.handleBackspace(event, index)}
-                  // ref={this.inputRefs[index]} // Use the ref created with createRef
-                />
-              ))}
+                  <input
+                    key={uuidv4()}
+                    className='otp-input'
+                    type="tel"
+                    maxLength="1"
+                    value={digit}
+                    autoFocus={index === 0}
+                    onChange={(event) => this.handleInputChange(event, index)}
+                  />
+                ))}
             </div>
             <div className='sub-container-verification'>
             <div className='resend-code-container'>

@@ -55,10 +55,16 @@ class SignIn extends Component{
         phoneNumberWithoutCode: '', 
         showSubmitError: false,
         selectedCountry: 'US',
+        buttonDisabled: true
     }
 
     setPhoneNumber = event => {
-        this.setState({phoneNumberWithoutCode: event.target.value});
+        const inputPhoneNumber = event.target.value
+        const numericPhoneNumber = inputPhoneNumber.replace(/\D/g, '');
+        this.setState({phoneNumberWithoutCode: numericPhoneNumber});
+        if(numericPhoneNumber.length <= 10){
+            this.setState(prevState => ({ buttonDisabled: !prevState.buttonDisabled }));
+        }
     }
 
     onSubmitFailure = () => {
@@ -92,7 +98,7 @@ class SignIn extends Component{
         const phoneNumber = selectedCountry + phoneNumberWithoutCode
         const isValid = this.validatePhoneNumber(phoneNumber)
        if(isValid){
-            const url = 'http://localhost:3030/send-otp'
+            const url = 'http://localhost:3031/send-otp'
             const options = {
                 method: 'POST',
                 body: JSON.stringify({phoneNumber}),
@@ -114,7 +120,8 @@ class SignIn extends Component{
     }
 
     render() {
-        const {showSubmitError} = this.state
+        const {showSubmitError, buttonDisabled} = this.state
+        const disable = buttonDisabled ? 'disable-button': ''
         return(
             <div className='signin-container'>
                 <div className='signin-sub-container'>
@@ -133,18 +140,17 @@ class SignIn extends Component{
                                     
                                 ))}
                             </select>
-                            <input onChange={this.setPhoneNumber} className='custom-input' type='text' maxLength={10}/>
+                            <input onChange={this.setPhoneNumber} className='custom-input' type='tel' maxLength={10} pattern="[0-9]*" />
                         </div>
                     </div>
                     <p className='message'>
                         We will send you a one time SMS message.
                         Charges may apply.
                     </p>
-                    <button type='submit' className='sign-in-button'>Sign in with OTP</button>
+                    <button type='submit' className={`sign-in-button ${disable}`} >Sign in with OTP</button>
                     </form>
                     {showSubmitError && <p className='error-message'>*Invalid Mobile Number</p>}
                 </div>
-                
             </div>
         )
     };
