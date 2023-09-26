@@ -6,12 +6,12 @@ import Cookies from 'js-cookie'
 class OtpVerification extends Component {
   state = {
     otp: ['', '', '', '', '', ''],
-    isOtpSent: false,
-    isOtpArrived: false,
-    isResendDisabled: false,
-    timer: 0,
-    showSubmitError: false,
-    resendTimer: 30,
+    // isResendDisabled: false,
+    // isOtpSent: false,
+    // isOtpArrived: false,
+    // timer: 0,
+    // showSubmitError: false,
+    // resendTimer: 30,
   };
 
 //   componentDidMount() {
@@ -70,8 +70,7 @@ handleResendClick = async() => {
           },
     }
     const response = await fetch(url, options)
-    this.setState({ isOtpArrived: false, isResendDisabled: true });
-
+    // this.setState({ isOtpArrived: false, isResendDisabled: true });
     // setTimeout(() => {
     //   this.setState({ isOtpArrived: true });
     //   this.startResendTimer(); // Start the resend timer
