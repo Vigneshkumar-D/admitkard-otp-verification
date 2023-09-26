@@ -1,0 +1,202 @@
+.otp-verification-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.otp-vefication-sub-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.otp-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.otp-validation-pic{
+    width: 131.52px;
+    height: 138.01px;
+    top: 100px;
+    left: 122px;
+    margin-bottom: 5%;
+}
+.otp-input{
+    width: 43px;
+    height: 43px;
+    top: 478px;
+    left: 61px;
+    border-radius: 10px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #E5E5E5;
+}
+@media screen and (max-width: 768px){
+    .otp-input{
+        width: 38px;
+        height: 38px;
+        top: 478px;
+    }
+}
+.verify-mobile-num-title{
+    font-family: "Work Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #333333;
+}
+@media screen and (max-width: 768px){
+    .verify-mobile-num-title{
+        
+        font-size: 20px;
+    }
+}
+.otp-sent-to, .mobile-number, .resend-code{
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #666666;
+    margin-bottom: 0px;
+}
+@media screen and (max-width: 768px){
+    .otp-sent-to, .mobile-number, .resend-code{
+        font-size: 16px;
+    }
+}
+.resend-code{
+    margin-top: 0px;
+    align-self: center;
+}
+@media screen and (max-width: 768px){
+    .resend-code{
+        font-size: 16px;
+    }
+}
+.mobile-number{
+    color: #333333;
+}
+.link{
+    padding-top: 10px;
+    text-decoration: none;
+}
+.change-mobile-number-button, .resend{
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    color: #F7B348;
+    cursor: pointer;
+    border-bottom: 1px solid #F7B348;
+    padding: 0px;
+}
+@media screen and (max-width: 768px){
+    .otp-sent-to, .mobile-number, .resend-code{
+        font-size: 16px;
+    }
+}
+.resend{
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
+}
+@media screen and (max-width: 768px){
+    .resend{
+        font-size: 16px;
+    }
+}
+.resend-code-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    padding-top: 30px;
+}
+.verify-button{
+    width: 224px;
+    height: 36px;
+    top: 658px;
+    left: 75px;
+    border-radius: 100px;
+    background-color: #F7B348;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px){
+    .verify-button{
+        width: 180px;
+    }
+}
+.timer{
+    margin: 0px;
+    align-self: center;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #666666;
+}
+.otp-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+}
+@media screen and (max-width: 768px){
+    .otp-form{
+        width: 100%;
+        align-self: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 380px;
+    padding-top: 15%;
+}
+@media screen and (max-width: 768px){
+    .input-container{
+        width: 300px;
+        padding-top: 15%;
+    }
+}
+.sub-container-verification{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
