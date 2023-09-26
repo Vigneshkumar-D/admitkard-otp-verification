@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react';
-import { v4 as uuidv4 } from "uuid";
 import './index.css';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie'
@@ -158,7 +157,7 @@ handleResendClick = async() => {
             <div className='input-container'>
               {otp.map((digit, index) => (
                   <input
-                    key={uuidv4()}
+                    key={index}
                     className='otp-input'
                     type="tel"
                     maxLength="1"
