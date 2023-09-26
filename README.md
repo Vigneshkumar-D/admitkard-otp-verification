@@ -1,4 +1,4 @@
-# Admitkard OTP Verification App
+# AdmitKard OTP Verification App
 
 This project is a mobile number verification application designed to verify user-provided mobile numbers via OTP (One-Time Password). It consists of two screens: the Mobile Number Screen (Screen 1) and the OTP Verification Screen (Screen 2). Success Screen (Screen 3) upon successful verification.
 
